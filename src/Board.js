@@ -133,10 +133,10 @@
       for (let i = 0; i < board.length; i++) {
         let colArr = [];
         for (let j = 0; j < board.length; j++) {
-          console.log('this is column row:', `${j}:${i}`)
+          // console.log('this is column row:', `${j}:${i}`)
           colArr.push(board[j][i])//0 or 1
         }
-        console.log(colArr)
+        // console.log(colArr)
         if (this.hasColConflictAt(colArr)) {
             return true;
           }
@@ -170,7 +170,7 @@
     hasAnyMajorDiagonalConflicts: function() {
       let board = this.rows();//whole board
       let arr = [];
-      console.log('this is board at diag:',)
+      // console.log('this is board at diag:',)
       for (let i = 0 ; i < board.length; i++) {
         if (this.hasMajorDiagonalConflictAt(0,i) || this.hasMajorDiagonalConflictAt(i,0)) {
           return true;
@@ -204,7 +204,7 @@
     hasAnyMinorDiagonalConflicts: function() {
       let board = this.rows();//whole board
       let arr = [];
-      console.log('this is board at diag:',)
+      // console.log('this is board at diag:',)
       for (let i = board.length-1 ; i > 0; i--) {
         if (this.hasMinorDiagonalConflictAt(0,i) || this.hasMinorDiagonalConflictAt(i, board.length-1)) {
           return true;

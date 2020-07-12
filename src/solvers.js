@@ -13,11 +13,48 @@
 
 // return a matrix (an array of arrays) representing a single nxn chessboard, with n rooks placed such that none of them can attack each other
 
+// start at row 0, column 0
+// place a rook
+// check if there is a conflict
+// if (conditional) {
+//   // if there is a conflict - logic!
+//   do something
+// // else
+// } else {
+//   // if there is no conflict - logic! (maybe repeat? woo!!)
+//   do a different thing!
+// }
+
 
 
 window.findNRooksSolution = function(n) {
-  var solution = undefined; //fixme
+  var solution = []; //fixme                solution = [[0, 0],]
+  var board = new Board({n: n});    //board = [ [0 ,0, 0, 0],[0, 0, 0, 0],[0, 0, 0, 0],[0, 0, 0, 0]]
+  // console.log(board.set());
+  // console.log('this is what a rook board looks like', board);
+  //create board set to n
 
+  // recursion function
+  // let checkVaildPlacement = function(board) {
+    //iterator over this row
+
+    board.togglePiece(0,0)               //(0,0) [1, 0 , 0 , 0]
+
+    for (let i = 0; i < board.length; i++) {    //[0 , 0 , 0 , 0]
+      // toggle first piece on the first  index of the row
+      //make row as board[i]
+      var row = board[i]                      //[0 , 0 , 0 , 0]
+      if (board.hasAnyRooksConflicts(row)) {       //false
+        board.togglePiece(i,i)
+      } else {
+        solution.push([i, i])
+
+      }
+    }
+
+  // }
+  // checkVaildPlacement(board)
+console.log('this is solution', board)
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
   return solution;
 };
